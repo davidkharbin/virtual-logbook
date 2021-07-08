@@ -1,0 +1,22 @@
+{
+  "name": "virtual-logbook",
+  "version": "1.0.0",
+  "description": "list-style app for logging flight simulator hours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidkharbin/virtual-logbook.git"
+  },
+  "keywords": [
+    "webpack-react"
+  ],
+  "author": "David Harbin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidkharbin/virtual-logbook/issues"
+  },
+  "homepage": "https://github.com/davidkharbin/virtual-logbook#readme"
+}
