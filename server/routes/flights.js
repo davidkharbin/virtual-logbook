@@ -27,6 +27,35 @@ router.route('/add').post((req, res) => {
 	newFlight.save()
 	.then(() => res.json('Flight added!'))
 	.catch(err => res.status(400).json('Error: ' + err));
-})
+});
+
+router.route('/:id').get((req, res) => {
+	Flight.findById(req.params.id)
+	  .then(flight => res.json(flight))
+	  .catch(err => res.status(400).json('Error: ' + err));
+  });
+
+  router.route('/:id').delete((req, res) => {
+	Flight.findByIdAndDelete(req.params.id)
+	  .then(() => res.json('Flight deleted.'))
+	  .catch(err => res.status(400).json('Error: ' + err));
+  });
+
+  router.route('/update/:id').post((req, res) => {
+	Flight.findById(req.params.id)
+	  .then(flight => {
+		flight.pilotname = req.body.pilotname;
+		flight.date = Date.parse(req.body.date);
+		flight.duration = Number(req.body.duration);
+		flight.landings = Number(req.body.landings);
+		flight.departure_airport = req.body.departure_airport;
+		flight.remarks = req.body.remarks;
+
+		flight.save()
+		  .then(() => res.json('Flight updated!'))
+		  .catch(err => res.status(400).json('Error: ' + err));
+	  })
+	  .catch(err => res.status(400).json('Error: ' + err));
+  });
 
 module.exports = router;
