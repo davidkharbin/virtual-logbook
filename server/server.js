@@ -3,7 +3,8 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-
+const pilotsRouter = require('./routes/pilots');
+const flightsRouter = require('./routes/flights');
 
 // lets me have environment variables in the .env file
 dotenv.config();
@@ -27,8 +28,13 @@ connection.once('open', () => {
 app.use(cors());
 app.use(express.json());
 
-//
+
 app.use(express.static(path.join(__dirname, '../public/')));
+
+
+
+app.use('/pilots', pilotsRouter);
+app.use('/flights', flightsRouter);
 
 // starts the server (listening)
 app.listen(PORT, () => {
