@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function App() {
 	return (
@@ -6,6 +6,6 @@ function App() {
 			Hello World?
 		</h1>
 	)
-}
+};
 
-export default App
+export default App;
