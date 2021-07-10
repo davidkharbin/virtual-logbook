@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Flight = props => (
@@ -10,9 +9,7 @@ const Flight = props => (
     <td>{props.flight.landings}</td>
     <td>{props.flight.departure_airport}</td>
     <td>{props.flight.remarks}</td>
-    <td>
-      <Link to={"/edit/"+props.flight._id}>edit</Link> | <a href="#" onClick={() => { props.deleteFlight(props.flight._id) }}>delete</a>
-    </td>
+
   </tr>
 )
 
@@ -26,7 +23,7 @@ export default class FlightsList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/flights/')
+    axios.get('http://localhost:4000/flights/')
       .then(response => {
         this.setState({ flights: response.data })
       })
@@ -36,7 +33,7 @@ export default class FlightsList extends Component {
   }
 
   deleteFlight(id) {
-    axios.delete('http://localhost:5000/flights/'+id)
+    axios.delete('http://localhost:4000/flights/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -73,3 +70,16 @@ export default class FlightsList extends Component {
     )
   }
 }
+
+
+
+
+
+// {
+//     "pilotname": "test",
+//     "date" : "2021-07-11T17:21:25.011+00:00",
+//     "duration": 120,
+//     "landings": 10,
+//     "departure_airport": "KARR",
+//     "remarks": "Touch and go's"
+// }

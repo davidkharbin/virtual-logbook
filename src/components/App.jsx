@@ -9,16 +9,11 @@ import CreatePilot from "./CreatePilot.jsx";
 
 function App() {
 	return (
-		<Router>
+		<div>
 			<div className="container">
-				<Navbar />
-				<br />
-				<Route path="/" exact component={FlightsList} />
-				<Route path="/edit/:id" component={EditFlight} />
-				<Route path="/create" component={CreateFlight} />
-				<Route path="/user" component={CreatePilot} />
+				<FlightsList />
 			</div>
-		</Router>
+		</div>
 	)
 };
 
