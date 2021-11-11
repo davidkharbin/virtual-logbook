@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-const Flight = props => (
-  <tr>
-    <td>{props.flight.pilotname}</td>
-    <td>{props.flight.date.substring(0,10)}</td>
-    <td>{props.flight.duration}</td>
-    <td>{props.flight.landings}</td>
-    <td>{props.flight.departure_airport}</td>
-    <td>{props.flight.remarks}</td>
-
-  </tr>
-)
+import Flight from './Flight.jsx';
 
 export default class FlightsList extends Component {
   constructor(props) {
