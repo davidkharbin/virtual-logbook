@@ -1,5 +1,5 @@
 node_modules
 .eslintrc.js
 package-lock.json
-public/bundle.js
+/public/bundle.js
 .env

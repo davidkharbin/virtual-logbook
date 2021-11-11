@@ -11,7 +11,7 @@ dotenv.config();
 
 // creates the express server & port
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 
 // mongo atlas connection

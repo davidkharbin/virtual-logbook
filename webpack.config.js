@@ -18,7 +18,8 @@ module.exports = {
 				query: {
 					presets: ['env', 'react'],
 				}
-			}
+			},
+
 		]
 	}
 };
